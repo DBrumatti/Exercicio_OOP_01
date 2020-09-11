@@ -2,40 +2,67 @@ using System;
 
 namespace Pessoa
 {
-	/// <summary>
-	/// Summary description for Class1.
-	/// </summary>
 	class Dados
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
+    	static string nome;
+      static int idade;
+      static double peso, altura;
+
 		static void Main(string[] args)
 		{
-			// Declaração de Variáveis
-
-			string	nome,	//Nome de uma pessoa
-					sexo;	//Sexo de uma pessoa
-
-			//Solicita e lê os Dados da Pessoa
 			Console.Write("Informe o seu nome: ");
 			nome = Console.ReadLine();
-			Console.WriteLine();	// Adiciona uma linha em branco
+			Console.WriteLine();
 
-			Console.Write("Informe o seu sexo: ");
-			sexo = Console.ReadLine();
-			Console.WriteLine();	// Adiciona uma linha em branco
+			Console.Write("Informe a sua idade: ");
+			idade = int.Parse(Console.ReadLine());
+			Console.WriteLine();
 
-			// Verifica o sexo da pessoa
-			// Estrutura de Seleção Composta IF / ELSE
+      Console.Write("Informe o seu peso: ");
+			peso = float.Parse(Console.ReadLine());
+			Console.WriteLine();
 
-			if ((sexo == "masculino") || (sexo == "MASCULINO")|| (sexo == "Masculino"))
-				Console.WriteLine("Ilmo Sr. {0}", nome);
-			else
-				Console.WriteLine("Ilma Sra. {0}", nome);
-		
-		} // Fim do método Main
+      Console.Write("Informe a sua altura: ");
+			altura = Double.Parse(Console.ReadLine());
+			Console.WriteLine();
 
-	} // Fim da Classe Dados
+      envelhecer();
+      
+		}
+    
+    public static void crescer ()
+    {
+      altura = altura + 0.5;
+      Console.WriteLine(" Nova altura: " + altura);
+    }
+    
+    public static void envelhecer ()
+    {
+      idade++;
+
+      Console.WriteLine("Parabéns, você envelheceu!");
+      Console.WriteLine("Nova idade: " + idade);
+      
+      if (idade <21)
+      {
+        crescer();
+      }
+      
+      else
+      {
+        Console.WriteLine("Altura: " + altura);
+      }
+
+    }
+    
+    public static void engordar (){
+
+    } 
+    
+    public static void emagrecer (){
+
+    }
+
+	}
+
 }
